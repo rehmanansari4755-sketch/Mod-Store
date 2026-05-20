@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModApks Store - Download Free Premium Mods</title>
+    
+    <style>
+        /* ==========================================================================
+           ENGINE STYLING (CSS Layout)
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a; /* Premium Dark Navy Slate */
+            color: #f8fafc;
+        }
+
+        /* Top Brand Navigation Matrix */
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 2px solid #334155;
+        }
+
+        header h1 {
+            color: #10b981; /* Neon Emerald Green */
+            font-size: 32px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Search Interface Architecture */
+        .search-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 25px 20px;
+            background-color: #1e293b;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 14px 25px;
+            font-size: 16px;
+            background-color: #0f172a;
+            border: 2px solid #475569;
+            border-radius: 30px;
+            color: #ffffff;
+            outline: none;
+            transition: 0.3s border-color;
+        }
+
+        .search-input:focus {
+            border-color: #10b981; /* Highlight border on click */
+        }
+
+        /* Responsive Matrix Cards Grid Layout */
+        .store-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Object Card Component Design */
+        .game-card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2);
+            border-color: #10b981;
+        }
+
+        /* Local Directory Image Asset Rendering */
+        .game-card img {
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            object-fit: cover;
+            border: 2px solid #475569;
+        }
+
+        .game-card h3 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .game-card p {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-bottom: 20px;
+            min-height: 38px; /* Restricts visual height collapse */
+        }
+
+        /* Execution Action Button Link Matrix */
+        .dl-action-btn {
+            display: block;
+            background-color: #10b981;
+            color: #ffffff;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        .dl-action-btn:hover {
+            background-color: #059669;
+        }
+
+        /* Utilities: Hidden logic class for search filtering processing */
+        .hidden-node {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+       HTML CONTENT ARCHITECTURE
+       ========================================================================== -->
+    <header>
+        <h1>ModApks Pro</h1>
+        <p>Verified Premium Applications & Modified Files Archive</p>
+    </header>
+
+    <!-- Interactive Search Node Input -->
+    <div class="search-wrapper">
+        <input type="text" id="storeSearchInput" class="search-input" placeholder="Search apps or games here...">
+    </div>
+
+    <!-- Active Games Catalogue Display Grid Container -->
+    <div class="store-grid" id="catalogueGrid">
+        
+        <!-- App Entity Block 1: Traffic Racer (Your Target Game) -->
+        <div class="game-card">
+            <!-- Points to your folder: assets/icons/traffic-racer.png -->
+            <img src="assets/icons/traffic-racer.png" alt="Traffic Racer Pro Icon">
+            <h3>Traffic Racer Mod</h3>
+            <p>Unlimited Currency Engine / Premium Vehicles Unlocked</p>
+            <!-- Points to your target download file: assets/apks/traffic-racer-mod.apk -->
+            <a href="assets/apks/traffic-racer-mod.apk" class="dl-action-btn">Download APK</a>
+        </div>
+
+        <!-- App Entity Block 2: Subway Surfers (Pre-Existing) -->
+        <div class="game-card">
+            <img src="assets/icons/subway-surfers.png" alt="Subway Surfers Icon">
+            <h3>Subway Surfers Mod</h3>
+            <p>Infinite Keys Matrix / Coins / Score Multipliers Boosted</p>
+            <a href="assets/apks/subway-surfers-mod.apk" class="dl-action-btn">Download APK</a>
+        </div>
+
+        <!-- App Entity Block 3: Clash of Clans (Pre-Existing) -->
+        <div class="game-card">
+            <img src="assets/icons/clash-of-clans.png" alt="Clash of Clans Icon">
+            <h3>Clash of Clans Mod</h3>
+            <p>Private Sandbox Server / Maximum Gold, Elixir & Gems</p>
+            <a href="assets/apks/coc-mod.apk" class="dl-action-btn">Download APK</a>
+        </div>
+
+    </div>
+
+    <!-- ==========================================================================
+       JAVASCRIPT LOGIC ENGINE (Real-Time Search Controller)
+       ========================================================================== -->
+    <script>
+        // DOM Nodes References Mapping
+        const searchInput = document.getElementById('storeSearchInput');
+        const cardsList = document.querySelectorAll('.game-card');
+
+        // Dynamic Filtering Array Interceptor
+        searchInput.addEventListener('input', function(event) {
+            const queryText = event.target.value.toLowerCase().trim();
+
+            cardsList.forEach(card => {
+                // Fetch text values inside the <h3> tag element of each card component
+                const gameTitle = card.querySelector('h3').innerText.toLowerCase();
+                
+                // Evaluating string match conditions inside data array context
+                if (gameTitle.includes(queryText)) {
+                    card.classList.remove('hidden-node'); // Match found, show card layout
+                } else {
+                    card.classList.add('hidden-node');    // No match, manipulate DOM visibility state
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
